@@ -1,6 +1,4 @@
 # <a id="a_top">[Spring Boot](https://spring.io/projects/spring-boot)</a>
-此项目基于Craig Walls的《Spring Boot实战》一书。<br/>
-使用的是Eclipse 集成的 STS插件自动创建的Spring Boot项目。<br/>
 Spring Boot 是伴随着[Spring4.0](https://github.com/mutistic/mutistic.spring/blob/master/com.mutistic.spring/README.md)诞生的。<br/>
 
 [spring Boot API](https://docs.spring.io/spring-boot/docs/current/api)<br/>
