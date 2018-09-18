@@ -232,7 +232,7 @@ public class DemoApplicationTests {
 <version>0.0.1-SNAPSHOT</version>
 <packaging>jar</packaging>
 <name>com.mutistic.boot</name>
-<description>此项目基于Craig Walls的《Spring Boot实战》一书。使用的是Eclipse 集成的 STS插件自动创建的Spring Boot项目</description>
+<description>Spring boot项目</description>
 ```
 
 5.1.2、属性说明：
