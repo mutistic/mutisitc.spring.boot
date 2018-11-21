@@ -5,6 +5,7 @@ Spring Boot 是伴随着[Spring4.0](https://github.com/mutistic/mutistic.spring/
 [spring Boot API-无框架](https://docs.spring.io/spring-boot/docs/current/api/overview-summary.html)<br/>
 [Spring Boot Actuator Web API.PDF](https://docs.spring.io/spring-boot/docs/current/actuator-api/pdf/spring-boot-actuator-web-api.pdf)<br/>
 [Spring Boot 参考指南](https://docs.spring.io/spring-boot/docs/current/reference/html/index.html)<br/>
+[Spring boot pom.xml 标签详解](https://blog.csdn.net/java173842219/article/details/54093460?utm_source=blogxgwz1)  
 
 |作者|Mutistic|
 |---|---|
@@ -227,6 +228,7 @@ public class DemoApplicationTests {
 
 ---
 ### <a id="a_pom">五、pom.xml：POM配置文件</a> <a href="#a_demoApplicationTests">last</a> <a href="#a_applicationProperties">next</a>
+[Spring boot pom.xml 标签详解](https://blog.csdn.net/java173842219/article/details/54093460?utm_source=blogxgwz1)  
 5.1、配置项目基本信息：<br/>
 
 ```xml
@@ -239,32 +241,30 @@ public class DemoApplicationTests {
 <description>Spring boot项目</description>
 ```
 
-5.1.2、属性说明：
+|标签名|说明|
+|---|---|
+|name|项目名称|
+|groupId|项目组名|
+|arrtifactId|模板代码所在包名|
+|version|项目版本号|默认 0.0.1-SNAPASHOT|
+|packaging|打包方式|Jar / War|
+|description|项目描述信息|
 
-```
-name：项目名称。
-groupId：项目组名。
-arrtifactId：模板代码所在包名。
-version：项目版本号：默认 0.0.1-SNAPASHOT。
-packaging：打包方式：Jar / War。
-description：项目描述信息。
-```
 
 5.1.3、Eclipse使用STS创建spring boot项目其他信息：
 
-```
-Service URL: https://start.spring.io  ： 默认Service URL。
-Use default location / Location：项目所在路径。默认即可。
-Type：构建方式：Maven / Gradel。
-Language：开发语言：Java / Kotlin / Groovy。
-Java Version：Java版本号。
-Package：项目包名。
-Woring sets / Add project to workong sets：是否需要引入其他工作项目。
-```
+|创建属性|说明|
+|---|---|
+|Service URL|https://start.spring.io：默认Service URL|
+|Use default location/Location|项目所在路径|默认即可|
+|Type|构建方式：Maven/Gradel|
+|Language|开发语言：Java/Kotlin/Groovy|
+|Java Version|Java版本号|
+|Package|项目包名|
+|Woring sets / Add project to workong sets|是否需要引入其他工作项目|
 
 5.2：配置文件和构建等编码格式和JDK版本信息等 。<br/>
 properties标签：
-
 ```xml
 <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -273,9 +273,9 @@ properties标签：
 </properties>
 ```
 
-5.3、配置构建信息：构建插件的主要功能是把项目打包成一个可执行的超级JAR（uber-JAR），包括把应用程序的所有依赖打入JAR文件内，并为JAR添加一个描述文件，其中的内容能让你用 java -jar 来运行应用程序。<br/>
+5.3、配置构建信息：构建插件的主要功能是把项目打包成一个可执行的超级JAR（uber-JAR），包括把应用程序的所有依赖打入JAR文件内，
+并为JAR添加一个描述文件，其中的内容能让你用 java -jar 来运行应用程序。<br/>
 build标签：
-
 ```xml
 <build>
 	<plugins>
@@ -287,9 +287,9 @@ build标签：
 </build>
 ```
 
-5.4.1、将spring-boot-starter-parent作为上一级，这样一来就能利用Maven的依赖管理功能，继承很多常用库的依赖版本，在声明依赖时就不用再去指定版本号了。<br/>
+5.4.1、将spring-boot-starter-parent作为上一级，这样一来就能利用Maven的依赖管理功能，
+继承很多常用库的依赖版本，在声明依赖时就不用再去指定版本号了。<br/>
 parent标签：
-
 ```xml
 <parent>
 	<groupId>org.springframework.boot</groupId>
@@ -301,7 +301,6 @@ parent标签：
 
 5.4.2、可以通过导入 spring-boot-dependencies 替代 spring-boot-starter-parent。<br/>
 dependencyManagement标签：
-
 ```xml
 <dependencyManagement>
 	<dependencies>
@@ -334,7 +333,6 @@ javax.inject > javax.inject > 1 ：
 ```
 
 5.5.2、dependencies标签：
-
 ```xml
 <dependencies>
 	<dependency>
@@ -380,6 +378,53 @@ javax.inject > javax.inject > 1 ：
 		<version>1</version>
 	</dependency>
 </dependencies>
+```
+
+5.6、远程仓库的配置：
+`<repository>`：配置远程仓库的注册地址
+```xml
+<!-- maven proxy, 本地仓库，替代 maven.apache.org 网站 jar 列表，
+   用户下载时，首先寻找该站点 - 如资源找到，则下载。
+   否则才去 jar 列表网站。对多人团队，可节省下载速度和个人存储空间。 -->
+<repositories>
+  <repository>
+    <id>spring-snapshots</id>
+    <name>Spring Snapshots</name>
+    <url>https://repo.spring.io/snapshot</url>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+  <repository>
+    <id>spring-milestones</id>
+    <name>Spring Milestones</name>
+    <url>https://repo.spring.io/milestone</url>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+```
+`<pluginRepositories>`：标签配置Maven从什么地方下载插件构件（Maven的所有实际行为都由其插件完成）。该元素的内部配置和`<repository>`完全一样
+```xml
+<pluginRepositories>
+  <pluginRepository>
+    <id>spring-snapshots</id>
+    <name>Spring Snapshots</name>
+    <url>https://repo.spring.io/snapshot</url>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </pluginRepository>
+  <pluginRepository>
+    <id>spring-milestones</id>
+    <name>Spring Milestones</name>
+    <url>https://repo.spring.io/milestone</url>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </pluginRepository>
+</pluginRepositories>
 ```
 
 ---
