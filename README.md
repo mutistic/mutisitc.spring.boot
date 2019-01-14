@@ -6,6 +6,7 @@ Spring Boot 是伴随着[Spring4.0](https://github.com/mutistic/mutistic.spring/
 [Spring Boot Actuator Web API.PDF](https://docs.spring.io/spring-boot/docs/current/actuator-api/pdf/spring-boot-actuator-web-api.pdf)<br/>
 [Spring Boot 参考指南](https://docs.spring.io/spring-boot/docs/current/reference/html/index.html)<br/>
 [Spring boot pom.xml 标签详解](https://blog.csdn.net/java173842219/article/details/54093460?utm_source=blogxgwz1)  
+[Spring boot 常用应用属性说明](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)  
 
 |作者|Mutistic|
 |---|---|
