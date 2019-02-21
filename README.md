@@ -2334,8 +2334,8 @@ public class MainByRunner {
 
 
 ---
-## <a id="a_ea">II、[EA](https://github.com/mutistic/mutistic.spring.boot/tree/master/com.mutistic.boot/notes/ea)</a> <a href="#a_pit">last</a> <a href="#a_down">Down</a>
-[E1_SpringApplication运行分析.eap](https://github.com/mutistic/mutistic.spring.boot/blob/master/com.mutistic.boot/notes/ea/E1_SpringApplication\350\277\220\350\241\214\345\210\206\346\236\220.eap)
+## <a id="a_ea">II、[EA](https://github.com/mutistic/mutisitc.spring.boot/tree/master/com.mutistic.boot/notes/ea)</a> <a href="#a_pit">last</a> <a href="#a_down">Down</a>
+[E1_SpringApplication运行分析.eap](https://github.com/mutistic/mutisitc.spring.boot/blob/master/com.mutistic.boot/notes/ea/E1_SpringApplication%E8%BF%90%E8%A1%8C%E5%88%86%E6%9E%90.eapp)
 
 
 ---
